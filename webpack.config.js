@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['core-js/stable', 'regenerator-runtime/runtime', './src/app.js'],
   output: {
-    path: path.resolve(__dirname,'public_html/scripts'),
+    path: path.resolve(__dirname,'public_html/assets/scripts'),
     filename: 'bundle.js'
   },
   module: {
@@ -20,7 +20,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname,'public_html'),
-    publicPath: '/scripts'
+    publicPath: '/assets/scripts'
   },
   devtool: 'source-map'
 }
